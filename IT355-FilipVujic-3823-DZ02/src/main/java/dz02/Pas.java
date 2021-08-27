@@ -5,10 +5,23 @@
  */
 package dz02;
 
+
 /**
  *
  * @author filip
  */
-public class Pas {
+public class Pas implements Zivotinja {
+   
+
+    @Override
+    public void nacinOglasavanja() {
+        System.out.println("Pas kaze av av.");
+    }
+
+    @Override
+    public void nahraniZivotinju() {
+        System.out.println("Pas je pojeo hranu.");
+    }
+    
     
 }

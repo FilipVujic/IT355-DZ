@@ -5,10 +5,22 @@
  */
 package dz02;
 
+
 /**
  *
  * @author filip
  */
-public class Kokoska {
+public class Kokoska implements Zivotinja {
+    
+    @Override
+    public void nacinOglasavanja() {
+        System.out.println("Kokoska kaze kokodaa.");
+    }
+
+    @Override
+    public void nahraniZivotinju() {
+        System.out.println("Kokoska je pojela hranu.");
+    }
+    
     
 }
