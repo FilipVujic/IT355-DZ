@@ -5,29 +5,69 @@
  */
 package dz02;
 
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+
 /**
  *
  * @author filip
  */
+@Configuration
+@ComponentScan
 public class Main {
+
 
     public static void main(String[] args) {
 
-        ZivotinjaService zs1 = new ZivotinjaService();
-        ZivotinjaService zs2 = new ZivotinjaService();
-        ZivotinjaService zs3 = new ZivotinjaService();
-
-        zs1.setZivotinja(new Pas());
-        zs2.setZivotinja(new Ovca());
-        zs3.setZivotinja(new Kokoska());
+        ApplicationContext context = getAppContext();
         
-        zs1.getZivotinja().nacinOglasavanja();
-        zs1.getZivotinja().nahraniZivotinju();
+        PasService pasService = (PasService) context.getBean("pasService");
+        pasService.runPas();
+        
+        KokoskaService kokoskaService = (KokoskaService) context.getBean("kokoskaService");
+        kokoskaService.runKokoska();
+        
+        OvcaService ovcaService = (OvcaService) context.getBean("ovcaService");
+        ovcaService.runOvca();
 
-        zs2.getZivotinja().nacinOglasavanja();
-        zs2.getZivotinja().nahraniZivotinju();
-
-        zs3.getZivotinja().nacinOglasavanja();
-        zs3.getZivotinja().nahraniZivotinju();
     }
+
+    @Bean(name = "pasService")
+    public PasService getPasService() {
+        return new PasService();
+    }
+    
+    @Bean(name = "ovcaService")
+    public OvcaService getOvcaService() {
+        return new OvcaService();
+    }
+    
+    @Bean(name = "kokoskaService")
+    public KokoskaService getKokoskaService() {
+        return new KokoskaService();
+    }
+    
+    @Bean(name = "pas")
+    public Pas getPas() {
+        return new Pas();
+    }
+    
+    @Bean(name = "ovca")
+    public Ovca getOvca() {
+        return new Ovca();
+    }
+    
+    @Bean(name = "kokoska")
+    public Kokoska getKokoska() {
+        return new Kokoska();
+    }
+
+    public static ApplicationContext getAppContext() {
+        ApplicationContext context = new AnnotationConfigApplicationContext(Main.class);
+        return context;
+    }
+
 }

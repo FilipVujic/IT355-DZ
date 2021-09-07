@@ -6,11 +6,16 @@
 package dz02;
 
 
+
 /**
  *
  * @author filip
  */
 public class Pas implements Zivotinja {
+
+    public void Pas() {
+       
+    }
    
 
     @Override
