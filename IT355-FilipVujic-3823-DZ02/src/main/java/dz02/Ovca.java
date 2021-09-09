@@ -5,11 +5,14 @@
  */
 package dz02;
 
+import org.springframework.stereotype.Component;
+
 
 /**
  *
  * @author filip
  */
+@Component
 public class Ovca implements Zivotinja {
     
     @Override

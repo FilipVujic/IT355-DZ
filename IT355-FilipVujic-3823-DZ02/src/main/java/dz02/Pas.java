@@ -5,12 +5,15 @@
  */
 package dz02;
 
+import org.springframework.stereotype.Component;
+
 
 
 /**
  *
  * @author filip
  */
+@Component
 public class Pas implements Zivotinja {
 
     public void Pas() {
