@@ -3,9 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package dz02;
+package dz02.entity;
 
+import dz02.util.Zivotinja;
 import org.springframework.stereotype.Component;
+
 
 
 /**
@@ -13,16 +15,21 @@ import org.springframework.stereotype.Component;
  * @author filip
  */
 @Component
-public class Kokoska implements Zivotinja {
-    
+public class Pas implements Zivotinja {
+
+    public void Pas() {
+       
+    }
+   
+
     @Override
     public void nacinOglasavanja() {
-        System.out.println("Kokoska kaze kokodaa.");
+        System.out.println("Pas kaze av av.");
     }
 
     @Override
     public void nahraniZivotinju() {
-        System.out.println("Kokoska je pojela hranu.");
+        System.out.println("Pas je pojeo hranu.");
     }
     
     

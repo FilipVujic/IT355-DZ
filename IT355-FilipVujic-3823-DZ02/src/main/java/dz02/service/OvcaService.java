@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package dz02;
+package dz02.service;
 
+import dz02.entity.Ovca;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,22 +14,22 @@ import org.springframework.stereotype.Service;
  * @author filip
  */
 @Service
-public class KokoskaService {
+public class OvcaService {
     
     @Autowired
-    private Kokoska kokoska;
+    private Ovca ovca;
     
-    public void runKokoska() {
-        kokoska.nacinOglasavanja();
-        kokoska.nahraniZivotinju();
+    public void runOvca() {
+        ovca.nacinOglasavanja();
+        ovca.nahraniZivotinju();
     }
 
-    public Kokoska getKokoska() {
-        return kokoska;
+    public Ovca getOvca() {
+        return ovca;
     }
 
-    public void setKokoska(Kokoska kokoska) {
-        this.kokoska = kokoska;
+    public void setOvca(Ovca ovca) {
+        this.ovca = ovca;
     }
     
     
