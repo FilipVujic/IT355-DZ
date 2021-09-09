@@ -29,12 +29,12 @@ public class InterceptorLog {
     //@Pointcut("dz02.util.Zivotinja+")
     @Before("execution(* run*(..))")
     public void before() {
-        logger.info("Calling nahraniZivotinju() method.");
+        logger.info("Calling run method.");
     }
     
-    @After("within(Zivotinja+)")
+    @After("execution(* dz02.service.*Service.run*(..))")
     public void after() {
-        logger.info("Finished showStudent() method.");
+        logger.info("Finished run method.");
     }
     
     public void afterThrowing() {
