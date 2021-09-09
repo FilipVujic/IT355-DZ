@@ -7,9 +7,11 @@ package dz02.util;
 
 import dz02.Main;
 import org.aspectj.lang.annotation.After;
+import org.aspectj.lang.annotation.AfterReturning;
+import org.aspectj.lang.annotation.AfterThrowing;
+import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
-import org.aspectj.lang.annotation.Pointcut;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
@@ -26,26 +28,28 @@ public class InterceptorLog {
     
     public static Logger logger = LoggerFactory.getLogger(InterceptorLog.class);
     
-    //@Pointcut("dz02.util.Zivotinja+")
-    @Before("execution(* run*(..))")
+    @Before("execution(* dz02.service.Pas*.run*(..))")
     public void before() {
-        logger.info("Calling run method.");
+        logger.info("Calling method.");
     }
     
-    @After("execution(* dz02.service.*Service.run*(..))")
+    @After("execution(* dz02.service.Ovca*.run*(..))")
     public void after() {
-        logger.info("Finished run method.");
+        logger.info("Finished method.");
     }
     
+    @AfterThrowing("execution(* dz02.service.*.run*(..))")
     public void afterThrowing() {
-        logger.info("Method showStudent() threw an exception.");
+        logger.info("Method threw an exception.");
     }
     
+    @AfterReturning("execution(* dz02.service.*.run*(..))")
     public void afterReturning() {
-        logger.info("Method showStudent() returned a value.");
+        logger.info("Method returned a value.");
     }
     
+    @Around("execution(* dz02.service.Kokoska*.run*(..))")
     public void around() {
-        logger.info("This is called around showStudent() method.");
+        logger.info("This is called around the method.");
     }
 }
