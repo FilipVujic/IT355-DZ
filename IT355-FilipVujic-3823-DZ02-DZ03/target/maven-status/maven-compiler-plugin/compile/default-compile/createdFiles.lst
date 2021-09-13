@@ -1,0 +1,10 @@
+dz02\entity\Ovca.class
+dz02\util\InterceptorLog.class
+dz02\entity\Pas.class
+dz02\service\OvcaService.class
+dz02\entity\Kokoska.class
+dz02\Main.class
+dz02\service\PasService.class
+dz02\service\KokoskaService.class
+dz02\config\AppConfig.class
+dz02\util\Zivotinja.class
